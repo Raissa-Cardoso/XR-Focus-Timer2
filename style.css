@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: clamp(40%, 1% + 1.2vw, 62.5%);
+
+  --hue: 240;
+  --basic-white: #fff;
+  --font-color: #323238;
+  --font-color-icon: hsl(var(--hue), 6%, 21%);
+  --bg-icon: hsl(var(--hue), 9%, 89%);
+  --bg-button-active: hsl(194, 97%, 31%);
+  --border-card-focus: hsla(194, 88%, 13%, 0.5);
+  --border-shadow-card: hsla(194, 85%, 5%, 0.6);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--basic-white);
+  color: var(--font-color);
+  max-width: 70.0rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.focusTimer {
+  display: grid;
+  height: 100vh;
+
+  grid-template-columns: 1fr 1fr;
+
+  place-content: center;
+  align-items: center;
+  gap: 10rem;
+}
+
+.timer span {
+  font-size: 12rem;
+  line-height: normal;
+}
+
+.controls {
+  display: flex;
+  height: 4.8rem;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.controls img {
+  height:clamp(4.6rem, 4.8rem, 4.8rem);
+}
+
+.controls button {
+  background-color: var(--basic-white);
+  border: none;
+  cursor: pointer;
+}
+
+.sounds {
+  display: grid;
+  grid-template-areas:
+    "A B"
+    "C D";
+  gap: 3.2rem;
+}
+
+.sounds .cardSound {
+  width: 13.8rem;
+  height: 15.2rem;
+
+  border-radius: 2.4rem;
+  background-color: var(--bg-icon);
+  border: none;
+
+  cursor: pointer;
+
+  display: grid;
+  place-content: center;
+
+  color: var(--font-color-icon);
+  font-size: 6.4rem;
+  box-shadow: 0.3rem 0.2rem 0.2rem var(--border-shadow-card);
+}
+
+.sounds .cardSound:hover {
+  animation: zoomOut 2s 0.5s alternate;
+}
+
+.sounds .cardSound:focus{
+  border-right: 2px solid var(--border-card-focus);
+  border-bottom: 2px solid var(--border-card-focus);
+}
+
+.sounds .selected {
+  background-color: var(--bg-button-active);
+  color: var(--basic-white);
+}
+
+@media (max-width: 700px) {
+  body{
+    padding-top: 2rem;
+  }
+  .focusTimer {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1.0);
+  }
+}

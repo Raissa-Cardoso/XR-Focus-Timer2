@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Timer 2.0</title>
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-svg" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="./src/main.js" defer></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <div class="focusTimer">
+      <section class="wrapperFocusTimer">
+        <section class="timer">
+          <span id="minutes">00</span>
+          <span id="twoPoints">:</span>
+          <span id="seconds">00</span>
+        </section>
+        <section class="controls" id="controls">
+          <button>
+            <img src="./assets/play.svg" alt="Icone de play" data-action="toggleRunning"/>
+          </button>
+          <button>
+            <img src="./assets/stop.svg" alt="Icone de stop" data-action="reset"/>
+          </button>
+          <button>
+            <img src="./assets/plus.svg" alt="Icone de mais" data-action="plusFive" />
+          </button>
+          <button>
+            <img src="./assets/minus.svg" alt="Icone de menos" data-action="minusFive" />
+          </button>
+        </section>
+      </section>
+      <section class="sounds" id="sounds">
+        <button class="cardSound ph-bold ph-tree" data-action="playSound" id="forest">
+        </button>
+        <button class="cardSound ph ph-cloud-rain" data-action="playSound" id="rain">
+        </button>
+        <button class="cardSound ph ph-storefront" data-action="playSound" id="coffeeShop">
+        </button>
+        <button class="cardSound ph ph-fire" data-action="playSound" id="fireplace">
+        </button>
+      </section>
+    </div>
+  </body>
+</html>
