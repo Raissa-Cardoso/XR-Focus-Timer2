@@ -10,7 +10,7 @@
 :root {
   font-size: clamp(40%, 1% + 1.2vw, 62.5%);
 
-  --hue: 240;
+  --hue: 230;
   --basic-white: #fff;
   --font-color: #323238;
   --font-color-icon: hsl(var(--hue), 6%, 21%);
